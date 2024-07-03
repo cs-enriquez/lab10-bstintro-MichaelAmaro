@@ -100,8 +100,19 @@ int treeSize(Node* root) {
 // BONUS! Write a function that will determine the height of the tree
 int treeHeight(Node* root) {
 	// base case
+	if(root == nullptr){ return 0; }
+	
+	int leftCount = treeHeight(root -> left);
+	int rightCount = treeHeight(root -> right);
+	
+	if(leftCount > rightCount){
+	    return leftCount + 1;
+	}
+    else{
+        return rightCount + 1;
+    }
 
 
-	// General case
+
 	
 }
